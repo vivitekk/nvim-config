@@ -3,8 +3,12 @@ return {
   config = function()
     require('gitsigns').setup({
       signs = {
-        delete = { text = "󰍵" },
-        changedelete = { text = "󱕖" },
+        add = { text = '\u{F457}' },
+        change = { text = '\u{F459}' },
+        delete = { text = '\u{F458}' },
+        topdelete = { text = '\u{F458}' },
+        changedelete = { text = '\u{F45A}' },
+        untracked = { text = '\u{F474}' },
       }
     })
   end
