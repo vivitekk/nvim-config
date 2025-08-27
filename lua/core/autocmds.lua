@@ -23,25 +23,17 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- disable h and l motions in nvim-tree
---vim.api.nvim_create_autocmd("FileType", {
---  pattern = "NvimTree",
---  callback = function()
---    vim.keymap.set("n", "h", "<NOP>", { buffer = 0 })
---    vim.keymap.set("n", "l", "<NOP>", { buffer = 0 })
---  end,
---})
-
-vim.cmd("hi NvimTreeCursorInvisible guifg=bg guibg=fg blend=0")
-vim.cmd("set guicursor+=a:NvimTreeCursorInvisible/lNvimTreeCursorInvisible")
-
+-- hide cursor in nvim-tree
 vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter" }, {
-  callback = function(data)
-    local api = require("nvim-tree.api")
-    if api.tree.is_tree_buf(data.buf) then
-      vim.cmd("hi NvimTreeCursorInvisible blend=100")
-    else
-      vim.cmd("hi NvimTreeCursorInvisible blend=0")
-    end
-  end,
+      callback = function(data)
+        local tree_api = require("nvim-tree.api")
+        local hl = vim.api.nvim_get_hl(0, { name = "Cursor", link = false })
+        if tree_api.tree.is_tree_buf(data.buf) then
+          vim.api.nvim_set_hl(0, "Cursor", { blend = 100, fg = hl.fg, bg = hl.bg })
+          vim.opt_local.guicursor:append("a:Cursor/lCursor")
+        else
+          vim.api.nvim_set_hl(0, "Cursor", { blend = 0, fg = hl.fg, bg = hl.bg })
+          vim.opt_local.guicursor:remove("a:Cursor/lCursor")
+        end
+      end,
 })
