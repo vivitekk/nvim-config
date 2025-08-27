@@ -14,3 +14,6 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<Enter>')
 
 -- exit terminal mode with an easier shortcut than the default <C-\><C-n>
 vim.keymap.set('t', '<leader><Esc>', '<C-\\><C-n>', { desc = 'exit terminal mode' })
+
+-- toggle nvim-tree
+vim.keymap.set('n', '<leader>nt', '<cmd>NvimTreeToggle<Enter>', { desc = 'toggle nvim-tree' })

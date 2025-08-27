@@ -11,8 +11,7 @@ vim.o.softtabstop = 4
 vim.o.number = true
 vim.o.relativenumber = true
 
--- remove '~' from empty lines at the end of a buffer
--- remove '|' from vertical separators
+-- remove '~' from empty lines at the end of a buffer and '|' from vertical separators
 vim.opt.fillchars = { eob = ' ', vert = ' ' }
 
 -- enable mouse support
