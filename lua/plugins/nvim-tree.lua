@@ -3,11 +3,7 @@ return {
   version = '*',
   lazy = false,
   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  config = function()
-    require('nvim-tree').setup({
-      renderer = {
-        root_folder_label = ':t'
-      }
-    })
-  end,
+  opts = {
+    renderer = { root_folder_label = ':t' },
+  },
 }
