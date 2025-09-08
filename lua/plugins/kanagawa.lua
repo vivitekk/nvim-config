@@ -12,37 +12,29 @@ return {
       colors = {
         theme = {
           all = {
-            ui = { bg_gutter = "none" }
-          }
-        }
+            ui = { bg_gutter = 'none' },
+          },
+        },
       },
       overrides = function(colors)
         return {
-          Normal = { fg = '#C5C9C5' },
-          Constant = { fg = '#C5C9C5' },
-          Identifier = { fg = '#C5C9C5' },
-          Statement = { fg = '#C5C9C5' },
-          PreProc = { fg = '#C5C9C5' },
-          Type = { fg = '#C5C9C5' },
-          Special = { fg = '#C5C9C5' },
-          StatusLine = { fg = '#C5C9C5' },
-          StatusLineNC = { fg = '#C5C9C5' },
-          LineNr = { bg = 'none' },
-          CursorLineNr = { bg = 'none' },
-          Signcolumn = { bg = 'none' },
-          MsgArea = { fg = '#C5C9C5' },
-          ModeMsg = { fg = '#C5C9C5' },
-          Pmenu = { bg = 'none', fg = '#C5C9C5' },
-          PmenuSbar = { bg = 'none' },
-          PmenuThumb = { bg = 'none' },
+          -- make floating windows transparent
+          NormalFloat = { bg = 'none' },
+          FloatBorder = { bg = 'none' },
+          FloatTitle = { bg = 'none' },
+          -- dark and transparent completion menu
+          Pmenu = { fg = colors.theme.ui.shade0, bg = 'none' },
+          PmenuSel = { fg = 'none', bg = colors.theme.ui.bg_p2 },
+          PmenuSbar = { bg = colors.theme.ui.bg_m1 },
+          PmenuThumb = { bg = colors.theme.ui.bg_p2 },
         }
       end,
       theme = 'dragon',
       background = {
         dark = 'dragon',
-        light = 'lotus'
-      }
+        light = 'lotus',
+      },
     })
-    vim.cmd.colorscheme('kanagawa-dragon')
-  end
+    vim.cmd.colorscheme 'kanagawa-dragon'
+  end,
 }

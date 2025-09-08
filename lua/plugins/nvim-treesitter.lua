@@ -2,6 +2,7 @@ return {
   'nvim-treesitter/nvim-treesitter',
   lazy = false,
   build = ':TSUpdate',
+  main = 'nvim-treesitter.configs',
   opts = {
     -- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#supported-languages
     ensure_installed = { 'bash', 'c', 'cpp', 'json', 'lua', 'markdown', 'python', 'vim', 'vimdoc' },

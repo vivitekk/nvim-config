@@ -1,3 +1,4 @@
+-- stylua: ignore
 --[[ options ]]-- `:help vim.o`
 
 -- tab and indenting
@@ -49,7 +50,7 @@ vim.o.timeoutlen = 300
 vim.o.splitright = true
 vim.o.splitbelow = true
 
--- displaying of certain whitespace characters
+-- whitespace characters display
 -- (vim.opt offers an interface for conveniently interacting with tables)
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
@@ -57,6 +58,9 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 -- minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 10
 
--- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`) 
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`)
 -- raise a dialog asking if you wish to save the current file(s)
 vim.o.confirm = true
+
+-- autocomplete menu settings
+vim.o.completeopt = 'menu,menuone,noselect,noinsert'
