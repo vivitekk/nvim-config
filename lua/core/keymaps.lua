@@ -1,5 +1,4 @@
--- stylua: ignore
---[[ keymaps ]]-- `:help vim.keymap.set`
+--[ keymaps ]-- `:help vim.keymap.set`
 
 -- enter command-line mode easier
 vim.keymap.set('n', ';', ':', { desc = 'enter command-line mode' })

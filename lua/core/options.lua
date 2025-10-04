@@ -1,5 +1,4 @@
--- stylua: ignore
---[[ options ]]-- `:help vim.o`
+--[ options ]-- `:help vim.o`
 
 -- tab and indenting
 vim.o.expandtab = true
@@ -61,6 +60,3 @@ vim.o.scrolloff = 10
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`)
 -- raise a dialog asking if you wish to save the current file(s)
 vim.o.confirm = true
-
--- autocomplete menu settings
-vim.o.completeopt = 'menu,menuone,noselect,noinsert'

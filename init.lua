@@ -1,5 +1,4 @@
--- stylua: ignore start
---[[ global variables ]]-- `:help vim.g`
+--[ global variables ]-- `:help vim.g`
 
 -- set <Space> as the leader key, `:help mapleader`
 -- must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -19,16 +18,16 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_python3_provider = 0
 
---[[ options ]]-- `:help vim.o`
+--[ options ]-- `:help vim.o`
 require 'core.options'
 
---[[ keymaps ]]-- `:help vim.keymap.set`
+--[ keymaps ]-- `:help vim.keymap.set`
 require 'core.keymaps'
 
---[[ autocommands ]]-- `:help lua-guide-autocommands`
+--[ autocommands ]-- `:help lua-guide-autocommands`
 require 'core.autocmds'
 
---[[ lazy.nvim plugin manager ]]-- `:help lazy.nvim.txt`
+--[ lazy.nvim plugin manager ]-- `:help lazy.nvim.txt`
 
 -- bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -49,5 +48,3 @@ require('lazy').setup({
   },
   checker = { enabled = true }, -- automatically check for plugin updates
 })
-
--- stylua: ignore end
