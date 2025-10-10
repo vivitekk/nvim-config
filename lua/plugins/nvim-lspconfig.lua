@@ -2,9 +2,8 @@ return {
   'neovim/nvim-lspconfig',
 
   dependencies = {
-    'mason-org/mason-lspconfig.nvim',
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
     {
+      -- lsp notification UI
       'j-hui/fidget.nvim',
       opts = {
         notification = {
@@ -15,8 +14,6 @@ return {
         },
       },
     },
-    'saghen/blink.cmp',
-    'folke/lazydev.nvim',
   },
 
   config = function()
@@ -75,7 +72,7 @@ return {
     vim.diagnostic.config({
       severity_sort = true,
       underline = false,
-      float = { border = 'rounded', source = false },
+      float = { source = false },
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = '\u{F530} ',
