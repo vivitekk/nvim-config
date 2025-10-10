@@ -56,14 +56,14 @@ return {
         preview_title = false,
       },
     },
-    extensions = {
-      ['ui-select'] = {
-        require('telescope.themes').get_dropdown(),
-      },
-    },
   },
-  config = function(self)
-    require('telescope').setup(self.opts)
+  config = function(_, opts)
+    require('telescope').setup(vim.tbl_deep_extend('force', opts, {
+      extensions = {
+        ['ui-select'] = { require('telescope.themes').get_dropdown() },
+      },
+    }))
+
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
   end,
