@@ -19,7 +19,6 @@ return {
         opts = {},
       },
       'folke/lazydev.nvim',
-      'saghen/blink.cmp',
     },
     opts = {
       keymap = {
