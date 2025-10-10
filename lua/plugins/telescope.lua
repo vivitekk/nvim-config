@@ -30,12 +30,12 @@ return {
       },
       mappings = {
         i = {
-          ['<Tab>'] = require('telescope.actions').move_selection_next,
-          ['<S-Tab>'] = require('telescope.actions').move_selection_previous,
+          ['<Tab>'] = 'move_selection_next',
+          ['<S-Tab>'] = 'move_selection_previous',
         },
         n = {
-          ['<Tab>'] = require('telescope.actions').move_selection_next,
-          ['<S-Tab>'] = require('telescope.actions').move_selection_previous,
+          ['<Tab>'] = 'move_selection_next',
+          ['<S-Tab>'] = 'move_selection_previous',
         },
       },
     },
