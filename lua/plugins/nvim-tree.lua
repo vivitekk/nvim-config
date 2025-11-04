@@ -7,7 +7,9 @@ return {
     renderer = { root_folder_label = ':t' },
     hijack_cursor = true,
   },
-  init = function()
+  config = function(_, opts)
+    require('nvim-tree').setup(opts)
+
     -- hide cursor in nvim-tree
     vim.api.nvim_create_autocmd({ 'WinEnter', 'BufWinEnter' }, {
       callback = function(data)

@@ -3,7 +3,8 @@ return {
   opts = {
     symbol = '\u{2502}',
   },
-  init = function()
+  config = function(_, opts)
+    require('mini.indentscope').setup(opts)
     -- disable drawing indentscope line for certain filetypes
     vim.api.nvim_create_autocmd('FileType', {
       pattern = { 'help', 'lazy', 'mason' },

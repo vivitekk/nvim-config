@@ -12,12 +12,10 @@ return {
     'nvim-telescope/telescope-ui-select.nvim',
     'nvim-tree/nvim-web-devicons',
   },
+
   opts = {
     defaults = {
       prompt_prefix = '\u{276F} ',
-      prompt_title = false,
-      results_title = false,
-      preview_title = false,
       selection_caret = '  ',
       multi_icon = ' ',
       sorting_strategy = 'ascending',
@@ -39,31 +37,27 @@ return {
         },
       },
     },
-    pickers = {
-      find_files = {
-        prompt_title = false,
-        results_title = false,
-        preview_title = false,
-      },
-      help_tags = {
-        prompt_title = false,
-        results_title = false,
-        preview_title = false,
-      },
-      live_grep = {
-        prompt_title = false,
-        results_title = false,
-        preview_title = false,
-      },
-    },
+    pickers = {},
+    extensions = {},
   },
-  config = function(_, opts)
-    require('telescope').setup(vim.tbl_deep_extend('force', opts, {
-      extensions = {
-        ['ui-select'] = { require('telescope.themes').get_dropdown() },
-      },
-    }))
 
+  config = function(_, opts)
+    -- disable titles in telescope window
+    local pickers = { 'find_files', 'help_tags', 'live_grep' }
+    for _, picker in ipairs(pickers) do
+      opts.pickers[picker] = vim.tbl_deep_extend('force', opts.pickers[picker] or {}, {
+        prompt_title = false,
+        results_title = false,
+        preview_title = false,
+      })
+    end
+
+    opts.extensions['ui-select'] =
+      vim.tbl_deep_extend('force', opts.extensions['ui-select'] or {}, require('telescope.themes').get_dropdown())
+
+    require('telescope').setup(opts)
+
+    -- enable extensions
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
   end,

@@ -42,7 +42,8 @@ return {
       light = 'lotus',
     },
   },
-  init = function()
+  config = function(_, opts)
+    require('kanagawa').setup(opts)
     vim.cmd.colorscheme 'kanagawa-dragon'
   end,
 }
