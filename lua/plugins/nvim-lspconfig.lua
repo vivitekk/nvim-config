@@ -1,6 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
-
+  event = { 'BufReadPre', 'BufNewFile' }, -- lazy load on editing a file
   dependencies = {
     {
       -- lsp notification UI
@@ -14,6 +14,7 @@ return {
         },
       },
     },
+    'mason-org/mason-lspconfig.nvim',
   },
 
   config = function()

@@ -1,7 +1,7 @@
 return {
   'stevearc/conform.nvim',
   event = { 'BufWritePre' }, -- lazy load on save
-  cmd = { 'ConformInfo' },
+  cmd = { 'ConformInfo' }, -- lazy load on command
   opts = {
     -- https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
     formatters_by_ft = {

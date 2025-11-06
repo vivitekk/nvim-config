@@ -1,7 +1,9 @@
 return {
   'nvim-tree/nvim-tree.lua',
   version = '*',
-  lazy = false,
+  keys = {
+    { '<leader>nt', '<cmd>NvimTreeToggle<Enter>', 'n', desc = 'toggle nvim-tree' }, -- lazy load on keymap
+  },
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = {
     renderer = { root_folder_label = ':t' },

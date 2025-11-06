@@ -1,8 +1,8 @@
 return {
   {
     'saghen/blink.cmp',
-    event = 'VimEnter',
     version = '1.*',
+    event = { 'InsertEnter', 'CmdlineEnter' }, -- lazy load on entering insert mode or cmdline
     dependencies = {
       {
         'L3MON4D3/LuaSnip',
@@ -18,7 +18,6 @@ return {
         },
         opts = {},
       },
-      'folke/lazydev.nvim',
     },
     opts = {
       keymap = {

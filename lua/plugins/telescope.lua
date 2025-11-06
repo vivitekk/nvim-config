@@ -1,5 +1,12 @@
 return {
   'nvim-telescope/telescope.nvim',
+  keys = {
+    -- lazy load on keymaps
+    { '<leader>ff', '<cmd>Telescope find_files<Enter>', 'n', desc = 'telescope find files' },
+    { '<leader>lg', '<cmd>Telescope live_grep<Enter>', 'n', desc = 'telescope live grep' },
+    { '<leader>ht', '<cmd>Telescope help_tags<Enter>', 'n', desc = 'telescope help tags' },
+  },
+
   dependencies = {
     'nvim-lua/plenary.nvim',
     {

@@ -1,6 +1,6 @@
 return {
   'nvim-treesitter/nvim-treesitter',
-  lazy = false,
+  event = { 'BufReadPre', 'BufNewFile' }, -- lazy load on editing a file
   build = ':TSUpdate',
   main = 'nvim-treesitter.configs',
   opts = {

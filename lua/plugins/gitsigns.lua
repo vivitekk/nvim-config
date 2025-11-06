@@ -1,5 +1,6 @@
 return {
   'lewis6991/gitsigns.nvim',
+  event = { 'BufReadPre', 'BufNewFile' }, -- lazy load on editing a file
   opts = {
     signs = {
       add = { text = '\u{F457}' },
