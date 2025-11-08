@@ -1,12 +1,10 @@
 return {
   {
     'saghen/blink.cmp',
-    version = '1.*',
     event = { 'InsertEnter', 'CmdlineEnter' }, -- lazy load on entering insert mode or cmdline
     dependencies = {
       {
         'L3MON4D3/LuaSnip',
-        version = '2.*',
         build = 'make install_jsregexp',
         dependencies = {
           -- {

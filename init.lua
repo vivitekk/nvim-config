@@ -46,5 +46,6 @@ require('lazy').setup({
   spec = {
     { import = 'plugins' }, -- import plugins specs from ~/.config/nvim/lua/plugins/
   },
+  defaults = { version = '*' }, -- install the latest stable version of plugins that support semver
   checker = { enabled = true }, -- automatically check for plugin updates
 })

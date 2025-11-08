@@ -1,6 +1,5 @@
 return {
   'nvim-tree/nvim-tree.lua',
-  version = '*',
   keys = {
     { '<leader>nt', '<cmd>NvimTreeToggle<Enter>', 'n', desc = 'toggle nvim-tree' }, -- lazy load on keymap
   },
