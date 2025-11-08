@@ -8,6 +8,7 @@ return {
   opts = {
     renderer = { root_folder_label = ':t' },
     hijack_cursor = true,
+    filters = { dotfiles = true },
   },
   config = function(_, opts)
     require('nvim-tree').setup(opts)
