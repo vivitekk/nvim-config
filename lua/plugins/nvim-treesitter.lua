@@ -4,9 +4,8 @@ return {
   build = ':TSUpdate',
   main = 'nvim-treesitter.configs',
   opts = {
-    -- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#supported-languages
-    ensure_installed = { 'bash', 'c', 'cpp', 'json', 'lua', 'markdown', 'python', 'vim', 'vimdoc' },
-    auto_install = false,
+    ensure_installed = { 'lua' }, -- parsers to be installed from https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#supported-languages
+    auto_install = true, -- automatically install missing parsers when entering buffers
     sync_install = false,
     highlight = { enable = true },
     indent = { enable = true },
