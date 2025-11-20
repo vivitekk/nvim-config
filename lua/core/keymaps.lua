@@ -9,6 +9,12 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'move to the lower split' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'move to the upper split' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'move to the right split' })
 
+-- split resizing
+vim.keymap.set('n', '<C-Up>', '<cmd>resize +1<Enter>', { desc = 'increase current window height' })
+vim.keymap.set('n', '<C-Down>', '<cmd>resize -1<Enter>', { desc = 'decrease current window height' })
+vim.keymap.set('n', '<C-Left>', '<cmd>vertical resize +1<Enter>', { desc = 'increase current window width' })
+vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize -1<Enter>', { desc = 'decrease current window width' })
+
 -- comment and uncomment text
 vim.keymap.set('n', '<leader>/', 'gcc', { desc = 'comment or uncomment line', remap = true })
 vim.keymap.set('v', '<leader>/', 'gc', { desc = 'comment or uncomment lines', remap = true })
