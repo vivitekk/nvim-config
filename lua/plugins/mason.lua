@@ -9,7 +9,8 @@ return {
     dependencies = { 'mason-org/mason.nvim' },
     event = { 'BufReadPre', 'BufNewFile' }, -- lazy load on editing a file
     opts = {
-      ensure_installed = { 'clangd', 'lua_ls' }, -- LSP servers
+      -- LSPs to be installed from https://mason-registry.dev/registry/list
+      ensure_installed = { 'clangd', 'lua_ls' },
     },
   },
   {
@@ -17,7 +18,15 @@ return {
     dependencies = { 'mason-org/mason.nvim' },
     event = { 'BufReadPre', 'BufNewFile' }, -- lazy load on editing a file
     opts = {
-      ensure_installed = { 'clang-format', 'stylua' }, -- formatters
+      -- debuggers, linters and formatters to be installed from https://mason-registry.dev/registry/list
+      ensure_installed = { 'clang-format', 'stylua' },
+      auto_update = true,
     },
+    config = function(_, opts)
+      require('mason-tool-installer').setup(opts)
+      vim.schedule(function()
+        vim.cmd('MasonToolsUpdate')
+      end)
+    end,
   },
 }
