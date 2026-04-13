@@ -19,18 +19,18 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded_python3_provider = 0
 
 --[ options ]-- `:help vim.o`
-require 'core.options'
+require('core.options')
 
 --[ keymaps ]-- `:help vim.keymap.set`
-require 'core.keymaps'
+require('core.keymaps')
 
 --[ autocommands ]-- `:help lua-guide-autocommands`
-require 'core.autocmds'
+require('core.autocmds')
 
 --[ lazy.nvim plugin manager ]-- `:help lazy.nvim.txt`
 
 -- bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
   local out = vim.fn.system({ 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath })

@@ -1,6 +1,6 @@
 --[ autocommands ]-- `:help lua-guide-autocommands`
 
--- set indent to 2 spaces for .lua files
+-- set indent to 2 spaces for lua files
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'lua',
   callback = function()

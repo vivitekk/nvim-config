@@ -97,9 +97,10 @@ return {
       },
     })
 
-    local lspconfig = require 'lspconfig'
+    local lspconfig = require('lspconfig')
     local capabilities = require('blink-cmp').get_lsp_capabilities()
 
+    -- setup LSPs automatically via mason-lspconfig
     require('mason-lspconfig').setup({
       handlers = {
         -- default handler for every installed server
