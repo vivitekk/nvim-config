@@ -22,3 +22,32 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.hl.on_yank()
   end,
 })
+
+-- run texlab `textDocument/build` method after write, run manually forward search with detached okular
+-- and restart server afterwards to refresh diagnostics
+vim.api.nvim_create_autocmd('BufWritePost', {
+  pattern = '*.tex',
+  callback = function(args)
+    local texlab = vim.lsp.get_clients({ name = 'texlab', bufnr = args.buf })[1]
+    local uri = vim.uri_from_bufnr(args.buf)
+    local build_params = { textDocument = { uri = uri } }
+
+    local tex_file = vim.api.nvim_buf_get_name(args.buf)
+    local pdf_file = vim.fn.fnamemodify(tex_file, ':r') .. '.pdf'
+    local cursor = vim.api.nvim_win_get_cursor(0)
+    local line = cursor[1]
+
+    -- callback to be run after build request
+    local build_callback = function(_, result)
+      vim.system({ 'okular', '--unique', string.format('file:%s#src:%d%s', pdf_file, line, tex_file) }, { detach = true })
+      if result then
+        vim.schedule(function()
+          vim.cmd('lsp restart texlab')
+        end)
+      end
+    end
+
+    -- send build request to texlab
+    texlab:request('textDocument/build', build_params, build_callback, args.buf)
+  end,
+})

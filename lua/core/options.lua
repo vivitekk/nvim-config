@@ -60,3 +60,6 @@ vim.o.scrolloff = 10
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`)
 -- raise a dialog asking if you wish to save the current file(s)
 vim.o.confirm = true
+
+-- add tex filetype so that empty .tex files are not recognized as plaintex
+vim.filetype.add({ extension = { tex = 'tex' } })

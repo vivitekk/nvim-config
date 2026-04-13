@@ -24,7 +24,18 @@ return {
         ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
       },
       appearance = { nerd_font_variant = 'mono' },
-      completion = { documentation = { auto_show = true, auto_show_delay_ms = 500 } },
+      completion = {
+        documentation = {
+          auto_show = true,
+          auto_show_delay_ms = 500,
+        },
+        accept = {
+          -- disable adding braces after accepting an item in the completion menu for latex
+          -- (texlab maps commands to functions and blink.cmp places auto_brackets after functions
+          -- even though not all latex commands require braces, e.g. `\alpha`, `\item`)
+          auto_brackets = { kind_resolution = { blocked_filetypes = { 'tex' } } },
+        },
+      },
       sources = {
         default = { 'lsp', 'path', 'snippets', 'lazydev' },
         providers = {

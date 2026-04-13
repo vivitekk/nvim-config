@@ -7,6 +7,16 @@ return {
     formatters_by_ft = {
       cpp = { 'clang-format' },
       lua = { 'stylua' },
+      tex = { 'tex-fmt' },
+    },
+    formatters = {
+      ['tex-fmt'] = {
+        inherit = true,
+        prepend_args = {
+          '--wraplen=130',
+          '--tabsize=4',
+        },
+      },
     },
     format_on_save = { timeout_ms = 500 },
   },

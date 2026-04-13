@@ -24,3 +24,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<Enter>')
 
 -- exit terminal mode with an easier shortcut than the default <C-\><C-n>
 vim.keymap.set('t', '<leader><Esc>', '<C-\\><C-n>', { desc = 'exit terminal mode' })
+
+-- texlab workspace commands
+vim.keymap.set('n', '<leader>tf', '<cmd>LspTexlabForward<Enter>', { desc = 'texlab forward search' })
+vim.keymap.set('n', '<leader>tce', '<cmd>LspTexlabChangeEnvironment<Enter>', { desc = 'texlab change innermost environment' })
+vim.keymap.set('n', '<leader>tfe', '<cmd>LspTexlabFindEnvironments<Enter>', { desc = 'texlab find all environmets' })

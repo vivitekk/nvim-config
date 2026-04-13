@@ -114,5 +114,23 @@ return {
     vim.lsp.config('lua_ls', {
       settings = { Lua = { completion = { callSnippet = 'Replace' } } },
     })
+
+    vim.lsp.config('texlab', {
+      settings = {
+        texlab = {
+          build = {
+            executable = 'latexmk',
+            args = { '-pdf', '-interaction=nonstopmode', '-synctex=1', '-auxdir=./build/', '-outdir=./', '%f' },
+            auxDirectory = './build/',
+            logDirectory = './build/',
+            pdfDirectory = './',
+          },
+          forwardSearch = {
+            executable = 'okular',
+            args = { '--unique', 'file:%p#src:%l%f' },
+          },
+        },
+      },
+    })
   end,
 }
