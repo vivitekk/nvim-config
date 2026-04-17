@@ -7,14 +7,17 @@ return {
     formatters_by_ft = {
       cpp = { 'clang-format' },
       lua = { 'stylua' },
-      tex = { 'tex-fmt' },
+      tex = { 'latexindent' },
     },
     formatters = {
-      ['tex-fmt'] = {
+      latexindent = {
         inherit = true,
         prepend_args = {
-          '--wraplen=130',
-          '--tabsize=4',
+          '-m',
+          '-y=defaultIndent:"    ",modifyLineBreaks:textWrapOptions:columns:130;multipleSpacesToSingle:1;when:after;comments:wrap:1',
+          '-c=./build/',
+        },
+      },
         },
       },
     },

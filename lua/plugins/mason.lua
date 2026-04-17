@@ -19,7 +19,7 @@ return {
     event = { 'BufReadPre', 'BufNewFile' }, -- lazy load on editing a file
     opts = {
       -- debuggers, linters and formatters to be installed from https://mason-registry.dev/registry/list
-      ensure_installed = { 'clang-format', 'stylua', 'tex-fmt' },
+      ensure_installed = { 'clang-format', 'stylua' },
       auto_update = true,
     },
     config = function(_, opts)
