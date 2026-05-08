@@ -1,3 +1,5 @@
+---@module 'lazy'
+---@type LazySpec
 return {
   'nvim-mini/mini.indentscope',
   event = { 'BufReadPre', 'BufNewFile' }, -- lazy load on editing a file

@@ -1,3 +1,5 @@
+---@module 'lazy'
+---@type LazySpec
 return {
   'neovim/nvim-lspconfig',
   event = { 'BufReadPre', 'BufNewFile' }, -- lazy load on editing a file

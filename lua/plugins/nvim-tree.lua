@@ -1,9 +1,13 @@
+---@module 'lazy'
+---@type LazySpec
 return {
   'nvim-tree/nvim-tree.lua',
   keys = {
     { '<leader>nt', '<cmd>NvimTreeToggle<Enter>', 'n', desc = 'toggle nvim-tree' }, -- lazy load on keymap
   },
   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  ---@module 'nvim-tree'
+  ---@type nvim_tree.config
   opts = {
     renderer = { root_folder_label = ':t' },
     hijack_cursor = true,

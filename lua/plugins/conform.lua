@@ -1,7 +1,11 @@
+---@module 'lazy'
+---@type LazyConfig
 return {
   'stevearc/conform.nvim',
   event = { 'BufWritePre' }, -- lazy load on save
   cmd = { 'ConformInfo' }, -- lazy load on command
+  ---@module 'conform'
+  ---@type conform.setupOpts
   opts = {
     -- https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
     formatters_by_ft = {

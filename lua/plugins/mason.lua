@@ -1,13 +1,19 @@
+---@module 'lazy'
+---@type LazySpec
 return {
   {
     'mason-org/mason.nvim',
-    opts = {},
     cmd = { 'Mason' }, -- lazy load on command
+    ---@module 'mason'
+    ---@type MasonSettings
+    opts = {},
   },
   {
     'mason-org/mason-lspconfig.nvim',
     dependencies = { 'mason-org/mason.nvim' },
     event = { 'BufReadPre', 'BufNewFile' }, -- lazy load on editing a file
+    ---@module 'mason-lspconfig'
+    ---@type MasonLspconfigSettings
     opts = {
       -- LSPs to be installed from https://mason-registry.dev/registry/list
       ensure_installed = { 'clangd', 'lua_ls', 'texlab' },
@@ -17,6 +23,8 @@ return {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     dependencies = { 'mason-org/mason.nvim' },
     event = { 'BufReadPre', 'BufNewFile' }, -- lazy load on editing a file
+    ---@module 'mason-tool-installer'
+    ---@type MasonToolInstallerSettings
     opts = {
       -- debuggers, linters and formatters to be installed from https://mason-registry.dev/registry/list
       ensure_installed = { 'clang-format', 'stylua' },

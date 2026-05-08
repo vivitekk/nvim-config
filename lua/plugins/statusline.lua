@@ -1,3 +1,5 @@
+---@module 'lazy'
+---@type LazySpec
 return {
   'nvim-mini/mini.statusline',
   version = false, -- install latest development version from main branch

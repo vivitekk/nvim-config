@@ -1,3 +1,5 @@
+---@module 'lazy'
+---@type LazySpec
 return {
   {
     'saghen/blink.cmp',
@@ -17,6 +19,8 @@ return {
         opts = {},
       },
     },
+    ---@module 'blink-cmp'
+    ---@type blink.cmp.Config
     opts = {
       keymap = {
         preset = 'enter',
